@@ -23,13 +23,17 @@ function App() {
       else {
         setReport(data);
         console.log(data);
-        setvalue('')
         setError('')
       }
     }
     catch (err) {
       setError("Failed to fetch weather report")
     }
+  }
+
+  const ResetData=()=>{
+    setvalue('')
+    setReport('')
   }
 
   return (
@@ -59,6 +63,10 @@ function App() {
             <img className='mx-auto mt-2' src={Report.current.condition.icon} alt="Weather Condition"/>
             <p className='text-sm mt-2'>Country: {Report.location.country}</p>
             <p className='text-sm'>Last Updated: {Report.current.last_updated}</p>
+            <button onClick={ResetData}
+              className='w-full bg-yellow-400 text-black font-semibold py-2 rounded-md mt-2 hover:bg-yellow-500 transition'>
+              Reset
+            </button>
           </div>
         )}
       </div>
