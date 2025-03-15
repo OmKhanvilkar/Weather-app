@@ -12,7 +12,7 @@ function App() {
 
   const generateReport = async () => {
     try {
-      const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=0c86c94158164423b7a41729251503&q=${value}&aqi=yes`)
+      const res = await fetch(`your-own-api-key`)
       const data = await res.json();
 
       if (data.error) {
